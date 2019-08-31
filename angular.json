@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "kp-core": {
+      "root": "projects/kp-core",
+      "sourceRoot": "projects/kp-core/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/kp-core/tsconfig.lib.json",
+            "project": "projects/kp-core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kp-core/src/test.ts",
+            "tsConfig": "projects/kp-core/tsconfig.spec.json",
+            "karmaConfig": "projects/kp-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kp-core/tsconfig.lib.json",
+              "projects/kp-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-multi-projects"

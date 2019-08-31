@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "kp-core": [
+        "dist/kp-core"
+      ],
+      "kp-core/*": [
+        "dist/kp-core/*"
+      ]
+    }
   }
 }
